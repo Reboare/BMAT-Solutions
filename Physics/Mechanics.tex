@@ -1,0 +1,785 @@
+\documentclass[11pt, titlepage]{article}
+\usepackage{geometry}        
+\geometry{letterpaper}    
+\usepackage[parfill]{parskip}  
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{amsmath}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage{float}
+ \usepackage[usenames,dvipsnames]{pstricks}
+\usepackage{epsfig}
+ \usepackage{pst-grad} % For gradients
+ \usepackage{pst-plot} % For axes
+ \usepackage[space]{grffile} % For spaces in paths
+ \usepackage{etoolbox} % For spaces in paths
+\makeatletter % For spaces in paths
+\graphicspath{ {images/} }
+\usepackage{titling}
+\usepackage{fontspec}
+\usepackage{pgfplots}
+\usepackage{eso-pic}
+\usepackage{soul}
+\newcommand\AtPageUpperRight[1]{\AtPageUpperLeft{%
+   \makebox[\paperwidth][r]{#1}}}
+\usepackage{caption}
+\usepackage[version=4]{mhchem}
+
+\newfontfamily\headingfont[]{Calibri}
+\renewcommand{\maketitlehooka}{\headingfont}
+
+ \patchcmd\Gread@eps{\@inputcheck#1 }{\@inputcheck"#1"\relax}{}{}
+\makeatother
+\usepackage{pst-node,pst-circ}
+
+\usepackage[most]{tcolorbox}
+\usepackage{comment}
+\usepackage[colorlinks=true, pdfstartview=FitV, linkcolor=blue, 
+            citecolor=blue, urlcolor=blue]{hyperref}
+            
+\usepackage{afterpage}
+\usepackage[pagecolor=none]{pagecolor}
+
+%\includeonly{Chapter1}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rfoot{www.crashentry.com}
+
+\makeatletter
+\newcommand\HUGE{\@setfontsize\Huge{38}{47}} 
+\makeatother
+
+
+
+% ------------------- Title and Author -----------------------------
+\title{
+\HUGE\textbf{\textcolor{white}{{\addfontfeature{LetterSpace=5.0}CRASH ENTRY}}} \\
+\Huge\textbf{\textcolor{white}{{\addfontfeature{LetterSpace=7.0}PHYSICS}}
+}}
+\author{}
+\date{}
+\begin{document}
+
+\definecolor{entryscheme}{HTML}{FF0012}
+\newpagecolor{entryscheme}\afterpage{\restorepagecolor}
+
+
+
+\begin{comment}
+\AddToShipoutPictureBG*{%
+  \AtPageUpperRight{\raisebox{-\height}{\frame{\includegraphics[width=8cm]{crashentry}}}}}
+
+\makeatletter
+\renewenvironment{quotation}
+           {\list{}{\listparindent 1.5em%
+                    %\itemindent    \listparindent
+                    %\rightmargin \leftmargin
+                    \parsep        \z@ \@plus\p@}%
+            \item\relax}
+           {\endlist}
+\makeatother
+\end{comment}
+
+
+
+\maketitle
+
+
+
+
+%\section*{Introduction}
+This is intended to give you a very brief introduction to a lot of the concepts in Physics you will need to approach the BMAT.  However, since the number of edge cases is so vast this is no substitute for actual understanding, and there will undoubtedly be concepts missed here that could come up in the BMAT.  The best thing you can do is to just practice these concepts with real questions.  These include past GCSE, A-level and BMAT papers.  We have attempted to include the essentials of the course specification, so use that along with this booklet to supplement your learning.
+
+\section{Electricity}
+With electricity, we need to make it clear what it is and what causes it.  In every electronic device, incredibly intricate circuits are created which carry an electric current, which is the movement of negatively charged electrons.  This movement carries with it energy, which powers the device.
+
+Current, $I$ in a circuit is how fast charge travels around the circuit in a given time, but we can also relate this to two other quantities, resistance, $R$,  and voltage, $V$.  Voltage is the energy carried per unit charge, and resistance can be defined as anything slowing the flow of charge.
+
+In effect
+\begin{description}
+\item[Voltage] How much energy is being carried.
+\item[Current] How fast it's carried around the circuit.
+\item[Resistance] How difficult is it to carry around the circuit.
+\end{description}  
+
+We can relate all three through Ohm's Law
+\begin{equation*}
+\mathbf{V=IR}.
+\end{equation*}
+
+\subsection{Circuits}
+Measuring these values from a circuit diagram commonly appears in the BMAT.  In a circuit diagram there are a few symbols you need to know.  
+
+\subsubsection*{Lamp}
+
+\begin{figure}[H]
+\centering
+\begin{pspicture}(-2,-1)(2, 1)
+%Lamps
+\pnode(-2, 0){Lamp1}
+\pnode(2, 0){Lamp2}
+\lamp(Lamp1)(Lamp2){}
+\end{pspicture}
+\end{figure}
+
+These emit light and are a key feature of most circuits that have appeared in the past papers.  Each bulb has a resistance and typically the brightness is proportional to the power passing through it.
+
+\subsubsection*{Resistor}
+\begin{figure}[H]
+\centering
+\begin{pspicture}(-2,-1)(2, 1)
+%Lamps
+\pnode(-2, 0){Lamp1}
+\pnode(2, 0){Lamp2}
+\resistor(Lamp1)(Lamp2){}
+\end{pspicture}
+\end{figure}
+
+One of the major sources of resistance in a circuit.
+
+\subsubsection*{Diode}
+\begin{figure}[H]
+\centering
+\begin{pspicture}(-2,-1)(2, 1)
+%Lamps
+\pnode(-2, 0){Lamp1}
+\pnode(2, 0){Lamp2}
+\diode(Lamp1)(Lamp2){}
+\end{pspicture}
+\end{figure}
+
+This is likely to be one you haven't encountered before, but its remarkably simply.  If current is flowing in the direction the diode arrow points then nothing changes.  If however it is moving in the opposite direction then no current can flow through the diode effectively breaking the circuit.
+
+\subsection*{Switch}
+\begin{figure}[H]
+\centering
+\begin{pspicture}(-2,-1)(2, 1)
+%Lamps
+\pnode(-2, 0){Lamp1}
+\pnode(2, 0){Lamp2}
+\switch[dipolestyle=normal](Lamp1)(Lamp2){}
+\end{pspicture}
+\end{figure}
+
+A switch just allows current to either flow through a path in the circuit or not.  If it's open, as it is here, then no current can flow.  If it's closed then current will flow.
+
+
+\subsubsection*{Ammeter}
+\begin{figure}[H]
+\centering
+\begin{pspicture}(-2,-1)(2, 1)
+%Lamps
+\pnode(-2, 0){Lamp1}
+\pnode(2, 0){Lamp2}
+ \circledipole[labeloffset = 0](Lamp1)(Lamp2){A}
+\end{pspicture}
+\end{figure}
+
+These measure the current flowing through a circuit and therefore will always lie in series with the actual circuit.
+
+\subsubsection*{Voltmeter}
+\begin{figure}[H]
+\centering
+\begin{pspicture}(-3,-3)(3, 1)
+%Lamps
+\pnode(-2, -2){Lamp1}
+\pnode(2, -2){Lamp2}
+ \circledipole[labeloffset = 0](Lamp1)(Lamp2){V}
+ %Wires
+ \pnode(-2, 0){Wire1}
+ \pnode(2, 0){Wire2}
+ \wire(Wire1)(Lamp1)
+ \wire(Wire2)(Lamp2)
+ \pnode(-3, 0){LampX}
+ \pnode(3, 0){LampY}
+ \lamp(LampX)(LampY){}
+\end{pspicture}
+\end{figure}
+
+A voltmeter measures the potential resistance, or voltage drop, between two points in a circuit.  Here it is measuring the potential distance across the lamp pictured.  If this lamp were removed we would measure an incredibly low potential difference as, using $V=IR$, a wire has a very low resistance so the voltage will also be very low.
+
+\subsection{Series and Parallel Circuit}
+There are two types of circuit configuration you need to be aware of.  Firstly, series circuit of which an example is shown below.
+
+\begin{figure}[H]
+\centering
+\begin{pspicture}(-3,-3)(3, 2)
+%Lamps
+\pnode(-3, 2){batteryX}
+\pnode(3, 2){batteryY}
+\battery(batteryX)(batteryY){}
+\pnode(-3, -2){lampX}
+\pnode(3, -2){lampY}
+\lamp(lampX)(lampY){}
+\wire(batteryX)(lampX){}
+\wire(batteryY)(lampY){}
+\end{pspicture}
+\end{figure}
+
+In these the current flows clockwise, from the positive to negative terminal.  A quick rule to remember is if we're adding resistors in a series circuit, we just sum up the resistances to get the total resistance
+\begin{equation*}
+\mathbf{R=R_1 + R_2 + R_3 + ...}
+\end{equation*}
+
+An example of a parallel circuit would be
+\begin{figure}[H]
+\centering
+\begin{pspicture}(-3,-3)(3, 3)
+%Lamps
+\pnode(-3, 2){batteryX}
+\pnode(3, 2){batteryY}
+\battery(batteryX)(batteryY){6V}
+\pnode(-3, -2){lampX}
+\pnode(3, -2){lampY}
+\resistor(lampX)(lampY){$2\Omega$}
+\wire(batteryX)(lampX){}
+\wire(batteryY)(lampY){}
+
+\pnode(-3, 0){Lamp1X}
+\pnode(3, 0){Lamp1Y}
+\resistor(Lamp1X)(Lamp1Y){$3\Omega$}
+\end{pspicture}
+\end{figure}
+
+In this case the current splits at the first path, depending on the resistance of each.  We can calculate this using $V=IR$, so the upper path will have a current of 2 A, while the lower one will have a current of 3 A. 
+
+If we wanted to calculate the total resistance of this circuit we can't just add up the resistances however.  We use
+\begin{equation*}
+\mathbf{\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + ... }.
+\end{equation*}
+So for our parallel circuit we have $\frac{1}{3} + \frac{1}{2} = \frac{5}{6}$, so a total resistance of $\frac{6}{5}$.  Using Ohm's law this means the initial current is $6 \div \frac{6}{5}$ or 5 A.  This is just the sum of the split currents. 
+
+Voltage however does not split and will be equal in each branch.  This has an important consequence that in the above circuit each lamp will be equally bright, even if we add another lamp with another parallel branch.  However if we add more lamps to the series circuit, they will all drop in brightness.
+
+Parallel circuits are quite tricky but remember these rules:
+\begin{itemize}
+\item Current splits according to the resistance of each branch.
+\item Voltage does not split at the branches.
+\end{itemize}
+
+So these two are fairly straightforward but you'll undoubtedly be asked much more complex questions in the actual exam.
+
+\subsection*{Example}
+\includegraphics[width=\textwidth]{2012q19}
+
+Here's a quick example to illustrate these points.  If Lamp X blows then current can no longer move along that path, so if you think about it we effectively have a series circuit now.  All the current now flows into Ammeter 2, rather than being split, so it's reading will increase, but how do we compare the resistance.  
+
+First we need to calculate the resistance before the lamp blew.  Assume the lamps all have resistance X, so firstly calculate the resistance of the parallel component.
+
+\begin{equation*}
+\frac{1}{X} + \frac{1}{X} = \frac{2}{X}
+\end{equation*}
+
+So we have a resistance of $\frac{X}{2}$, which we add to the resistance off the other lamp yielding $X + \frac{X}{2} = \frac{3X}{2}$.  After the bulb breaks, we have a resistance of $2X$, as we can just add the resistances since it's now effectively a series circuit.  So the total resistance increases and using Ohm's Law, the current will decrease so ammeter 1's value decreases.  
+
+\subsection{Short Circuit}
+You've undoubtedly heard of short circuit, when something you own just no longer works correctly, and this is a concept that has been tested a number of times in the exam. 
+
+\begin{figure}[H]
+\centering
+\begin{pspicture}(-3,-3)(3, 3)
+%Lamps
+\pnode(-3, 2){batteryX}
+\pnode(3, 2){batteryY}
+\battery(batteryX)(batteryY){}
+\pnode(-3, -2){lampX}
+\pnode(3, -2){lampY}
+\lamp(lampX)(lampY){}
+\wire(batteryX)(lampX){}
+\wire(batteryY)(lampY){}
+
+\pnode(-3, 0){Lamp1X}
+\pnode(3, 0){Lamp1Y}
+\switch(Lamp1X)(Lamp1Y){}
+\end{pspicture}
+\end{figure}
+
+ If we were to close the switch, remembering that a wire has an incredibly low resistance (effectively nothing), then all the current will flow through that path, entirely bypassing the lamp.  Current will favour the path of least resistance and if this happens then the lamp won't work.
+
+\subsection{Power and Energy}
+We've mentioned voltage as being a measure of how much energy is being carried, and current as the speed of that transfer, so to calculate how much power is being generated in the circuit we can use
+\begin{equation*}
+\mathbf{P=VI}.
+\end{equation*}
+Typically you'll have to use this with Ohm's Law, $V=IR$, depending on which values you've been given.
+
+To calculate the total energy transferred you simply multiply the power by the time taken,
+\begin{equation*}
+E = Pt.
+\end{equation*} 
+
+\subsection{Transformers}
+Electromagnetic induction is how electricity can be generated in a conductor.  By applying a changing magnetic field to a coil of wire, for example, a voltage will be induced within the wire.  Normally this will be achieved by rotating a coil of wire in a magnetic field, inducing a voltage across the coil.  Understanding this is key to understanding how transformers work.
+
+Not all devices will work at all voltages, and in some cases this can be incredibly harmful to the devices.  If, for example with a bulb, the voltage is too high this could cause the bulb to blow.  We use transformers to reduce the voltage down to safe levels.
+
+A transformer is made up of two coiled wires.  By varying the current in the primary coils, this induces a changing magnetic field which induces a current in the secondary coils.  The voltage induced across the second depends on the \textbf{number of coils in each}.  They are related through
+\begin{equation*}
+\mathbf{\frac{V_p}{V_s} = \frac{n_p}{n_s}},
+\end{equation*}
+where $n_p$ and $n_s$ are the number of coils on the primary and secondary wires respectively.  
+
+We often assume 100\% efficiency with transformers implying all power is transferred, or
+\begin{equation*}
+\mathbf{V_pI_p = V_sI_s.}
+\end{equation*}
+
+
+
+\section{Motion and Energy}
+One of the key skills in physics is the ability to describe the motion of objects according to Newton's laws of motion.  This isn't intended to be a full comprehensive overview of all of Newtonian physics however, merely a refresher to guide you on the types of questions typically tackled in the BMAT.  If you're struggling on a certain topic, free online resources will be linked to give a more thorough introduction.  Most of what we're going to cover in this section should be familiar to you from GCSE, but there are some slight details that you might be unaware of if you haven't done the AS level.
+
+\subsection{Kinematics}
+Starting out with the very basics, for an object with no force applied, moving with a constant speed, $v$ we can describe this in terms of the distance it travels, $d$ and the time taken, $t$.  This is 
+\begin{equation*}
+\mathbf{v = \frac{d}{t}}.
+\end{equation*}
+This is an absolutely fundamental equation to remember for all sections.
+
+If we're changing our speed mid journey however, this equation will not hold so we need to use the equation for acceleration, which is
+\begin{equation*}
+\mathbf{a = \frac{\rm{\mathbf{change\; in\; velocity}}}{\rm{\mathbf{time}}} = \frac{v_1 - v_0}{t}}.
+\end{equation*}
+
+Here, $v_1$ would be the speed you start at and $v_0$ is the speed you end up at.  So we now have a way of measuring just how fast you are changing your speed.
+
+Each of these will have an associated direction, which are known as vectors.  To visualise this just imagine two cars driving in opposite directions, with equal speeds.  If you draw an arrow showing their movement, they will be in opposite directions of equal sizes.  If one car is larger than the other it will have a larger arrow.  A vector can be visualised as this arrow.
+
+When dealing with vectors we refer to the speed as the velocity, speed with a direction.  
+
+\subsection{Distance-Time and Velocity-Time Graphs}
+One type of question that has popped up in the past are those which require you to analyse velocity-time and distance-time graphs.  You need to be able to calculate gradients and the area under graphs.  
+
+How these different graphs relate to each other is a bit tricky to explain without calculus but the gradient of a graph is the rate of change of that quantity.
+
+We know velocity is the rate of change of distance with time, so the gradient of a distance-time graph will be the velocity.  Acceleration is the rate of change of velocity with time, so the gradient of a velocity-time graph will be the acceleration.  
+
+To go back, we take the area under the curve, so the area under a velocity-time graph will be the total distance travelled and the area under an acceleration-time graph will be the total velocity change.
+
+\subsection*{Example 1}
+
+\includegraphics[width=\textwidth]{vt}
+
+Calculating the area under a graph is a little involved, but the easy way is just to add the area of each of the dotted boxes shown on this graph to get the distance.  Due to the curved area you will have to use some assumptions, or model it as a straight line and correct later.
+
+\subsection*{Example 2}
+
+\includegraphics[width=\textwidth]{vt+dt}
+
+This shows four graphs and we want to find an accelerating object.  The bottom two are distance-time graphs so will have no change in velocity as they are straight lines, therefore no acceleration.  The top two however are accelerating as they have an increase in velocity.  To calculate the gradient just take the total velocity change and divide it by the time, which is easy due to the guides to the axis.
+
+\subsection{SUVAT}
+As an aside it's probably best to go over the SUVAT equations.  The official BMAT website states that while these aren't required, they're useful.  However there have been questions that have required their use in the past, so its better to be safe than sorry and to learn these.  SUVAT equations are 5 equations describing the relationship between 5 different variables.  These are:
+\begin{itemize}
+\item Initial Velocity, $u$
+\item Final Velocity, $v$
+\item Acceleration, $a$
+\item Distance Travelled, $s$
+\item Time Taken, $t$
+\end{itemize}
+
+These equations are
+\begin{equation*}
+\begin{aligned}
+v&=u+at\\
+v^2&=u^2+2as\\
+s&=ut+\frac{1}{2}at^2\\
+s&= \frac{1}{2} (v+u)t\\
+s&= vt - \frac{1}{2}at^2\\
+\end{aligned}
+\end{equation*}
+
+
+
+%\begin{tcolorbox}[breakable,colback=white,colframe=red,width=\dimexpr\textwidth+12mm\relax,enlarge left by=-6mm]
+
+%\end{tcolorbox}
+
+
+\subsection{Forces}
+You'll have to become well acquainted with Newton's three laws of motion to solve a lot of problems on the BMAT. 
+
+\begin{enumerate}
+\item{Without the application of an external force, a body will continue to move at a constant velocity in an inertial reference frame.}
+\item{$\mathbf{F=ma}$}
+\item{When a body exerts a force on a second body, the seconds body exerts an equal and opposite force on the first body.}
+\end{enumerate}
+
+Lets break them down quickly.  The first is simply stating that any object will continue to move at a constant velocity, unless you act on it with a force.  If for example, we were flying through space with no gravity, we'd continue travelling at the same speed forever.  This is called \textbf{inertia}.
+
+The second is the relationship between acceleration and the force applied, as a force will change your velocity.  Remember this equation!
+
+For the third, if you press your hand against the table, the table is exerting a force on your hand equal to the one you're applying.  Otherwise your hand would just pass straight through the table.
+
+If you have two opposite forces applied to an object, we just subtract one from the other to get the \textbf{resultant force}.  Gravity exerts a force on you all the time but since we are standing on the ground, which via Newton's 3rd law exerts an equal and opposite force, we have 0 resultant force acting on us.
+
+\subsection{Momentum}
+Another key concept to remember is that of momentum.  Momentum, $P$ is a quantity that relates to your mass and your velocity by
+\begin{equation*}
+\mathbf{P=mv}.
+\end{equation*}
+Every object carries momentum depending on how fast it's travelling and its mass, and this is always conserved no matter what!  If two objects collide and move off at different velocities, they will each have different momenta, but the sum of their momenta before they collided, will be equal to the sum after they collided.  We can describe the force exerted on each object during the collision as the \textbf{rate of change of their momenta}, i.e
+\begin{equation*}
+\mathbf{F=\frac{\Delta P}{\Delta t}},
+\end{equation*} 
+where $t$ is time and the delta represents the change in that value.
+
+
+
+\subsection{Gravity}
+
+To force gravity exerts is your \textbf{weight}.  This is different from your \textbf{mass} as your mass is the amount of matter in your body while your weight is dependent on the gravity of the planet.  We can calculate weight using
+\begin{equation*}
+\mathbf{W=mg},
+\end{equation*}
+where $m$ is your mass and $g$ is the gravitational field strength of the planet (which in the absence of any other force will be the speed you accelerate at).  In the BMAT this is approximated to 10 N/kg (this will be given to you).
+
+Now we need to tackle how someone falling through the air would act.  When falling initially you'll be accelerating due to the force of gravity, but as you fall, the air will apply an opposite force to counteract this.  Initially this force will be much greater than gravity, causing you to decelerate, but as you slow down the air resistance also reduces, until it's equal to the force of gravity.  You will then have a resultant force of 0 N and you will be falling at your \textbf{terminal velocity} (Remember Newton's first law!  You don't need a force to have a velocity).
+
+\subsection{Energy}
+We can't create or destroy energy, we can only transform it into another form, it is always conserved.  It comes in many different forms such as gravitational, kinetic, sound, chemical, heat and light.  Some of these are useful or wasted depending on what we're doing.  If we're driving a car, chemical energy stored in petrol is transformed into kinetic as useful energy but sound or heat would be wasted.
+
+To efficiency of this car would be the fraction of kinetic energy divided by the total energy stored in the petrol.  
+
+The forms we'll be dealing with are kinetic and gravitational potential in the BMAT.
+
+The gravitational potential depends on how high you are,
+\begin{equation*}
+\mathbf{E_p=mgh},
+\end{equation*}
+where h is your height above the ground.
+
+The kinetic energy depends on how fast you're moving
+\begin{equation*}
+\mathbf{E_k=\frac{1}{2}mv^2}.
+\end{equation*}
+
+If you were to climb a mountain you'd have a lot of gravitational potential energy.  If you jump off, this will be converted to kinetic energy as you fall.
+
+One way we can transfer energy is via the concept of \textbf{work}.  If we push a block along a road with a force, how do we quantify the energy taken to push it a certain distance?
+
+\begin{equation*}
+\mathbf{W=F\times d},
+\end{equation*}
+where $d$ is the distance travelled and $F$ is the force exerted \textbf{in the direction the object has moved}.  This is important, the work done is only a function of the force acted in the direction of travel.  It's unlikely you'll be asked anything too tricky on this concept but it has been tested in the past.
+
+The concept of power tells us how fast energy transfer ocurrs and is simply
+\begin{equation*}
+\mathbf{\rm{\textbf{Power}}=\frac{\rm{\textbf{Energy\: Transferred}}}{\rm{\textbf{time}}}}
+\end{equation*}
+
+\subsubsection*{Example}
+\includegraphics[width=\textwidth]{2012q11}
+
+This example showcases one of the common mistakes people can make when attempting questions regarding work.  Just looking at the equation and memorising won't give actual understanding of the underlying physics.  When calculating the work done by a force, the distance, $d$, is always in the same direction the force is acting.  
+
+Clearly the example with the wheelbarrow does have work being done, as the wheelbarrow isn't moving, but since the distance, $d$, given isn't in the same direction as the force then it's not equal to $F \times d$.  The example of a man sitting on a chair has no work being done, as via Newton's third law he will have an equal and opposite force acted on him by the chair, meaning he isn't moving and resultant force is 0 N.
+
+The pulley, however, is having work done and can be described by $F \times d$ as it is in the same direction as the force.
+
+\section{Thermal Physics}
+Thermal physics is a way to describe the effects thermal energy can have upon a system.  Typically this is done using statistics but the basics are easily understood without this.
+
+Most materials can be organised into three separate phases.
+\begin{itemize}
+\item \textbf{solids}
+\item \textbf{liquids}
+\item \textbf{gases}
+\end{itemize}
+
+Solids are made up of tightly packed atoms bonded together with the important factor being that they do not move from their position.
+
+Liquids on the other hand are randomly arranged and can move around each other as they are bonded together but far more weakly.  This is why water flows and allows other objects to move through it.
+
+Gases are very far apart and move very quickly and randomly.  Since there are no bonds between gas molecules, they are free to move around.
+
+Given enough energy these three states can transform between each other, with the order of increasing energy being solid $\rightarrow$ liquid $\rightarrow$ gas.  As the amount of energy input into the system increases, the temperature increasing, this gives the atoms enough energy to break free of their bonds.  Some good examples of state changes would be candle wax melting into a liquid, water vapour forming around hot water (evaporation) or water freezing into ice at cooler temperatures.
+
+Each state will consequently have different densities, where the density of a system is mass$\div$volume and this is typically in order of decreasing density solid $\rightarrow$ liquid $\rightarrow$ gas (Water and Ice are actually one interesting anomaly to this pattern, due to the complex nature of the bonds).
+
+We can determine different densities by measuring the mass and volume of an object separately, or use Archimedes' principle which involves submerging an object in water and measuring how much water is displaced, with the density of water being a known constant.
+
+
+Now we need to approach understanding of how thermal energy can transfer through these three states.  There are three ways in which heat can transfer through a system:
+\begin{itemize}
+\item \textbf{Conduction}
+\item \textbf{Convection}
+\item \textbf{Radiation}
+\end{itemize} 
+
+\subsection{Conduction}
+Conduction is the thermal transfer of energy when atoms collide with each other.  Imagine a solid, made up of millions of individual particles.  A particle on the edge gains a large amount of thermal energy, causing it to move as the thermal energy becomes kinetic, resulting in it colliding with all neighbouring particles.  This in turn transfers energy throughout the material as each individual particle gains some of this thermal energy.
+
+If you're applying a constant heat source, you can see how this energy becomes transferred through the system.  Different materials will transfer this heat at different rates due to thermal conductivity.  Metal, as you may have experienced, conducts heat very well.  Air, on the other hand, is a very poor thermal conductor (an insulator) due to how far apart the atoms are in air.
+
+A number of factors affect heat conduction, such as the \textbf{difference in temperature}.  Heat will transfer much faster to a colder area, with speed increasing the further apart their temperatures are.  The \textbf{length} of the object also has an effect as heat has to travel further.  Further, increasing the \textbf{cross-sectional area} of the material will slow the heat transfer. 
+
+\subsection{Convection}
+The difference between convection and conduction is that in conduction, the mass contained doesn't move as a whole, whereas convection is heat transfer via mass motion in either a gas or a liquid.  
+
+As a material heats, it becomes less dense as the atoms move apart and therefore will rise (this is why hot air rises).  This is due to the ideal gas law
+\begin{equation}
+PV = nRT,
+\end{equation}
+where $P$ is pressure, $V$ is volume, $T$ is temperature, $n$ is the amount of atoms present and $R$ is a constant.  Increasing temperature has to lead to an increase in volume at a constant pressure.
+
+The hot air rises, and the cooler air will drop to replace the warm air that's risen.  This can lead to a circulation of air, as the air will rise, cool down and drop to be replaced by the newer heated air close to the warm source.
+
+
+\subsection{Radiation}
+This is the third form of heat transfer and unlike the previous, requires no mass to transfer the energy.  This heat is transferred via electromagnetic waves, which will be covered in more detail in the next section.  Bodies with a lot of energy will radiate these waves in all directions and will be absorbed by atoms to transfer the energy.  A good example of this type of transfer would be the sun, which transfers all it's heat to us through radiation.
+
+Factors affecting the transfer of radiation will depend on the medium it's travelling through (heat travelling through the atmosphere is absorbed and emitted millions of times on its journey to us), as well as the surface its being absorbed by.  Shiny surfaces are poor at emitting and absorbing, whereas black surfaces are good emitters and absorbers.  The surface area of the material will also greatly affect the rate of absorption and emission
+
+
+
+
+\section{Waves}
+The simplest way to view a wave is that it's the transfer of energy through some medium without that medium moving overall from it's original position.  An example might be ripples in water.  The overall body of water isn't moving to carry the energy, but energy is being transferred through it, which you can see.
+
+There are a few concepts you need to know when dealing with waves which are amplitude, frequency, period and wavelength.
+
+A length of a wave over one full oscillation is known as the \textbf{wavelength} or $\mathbf{\lambda}$ as it will be referred to ocassionally.  A full oscillation includes a peak and a trough but effectively it is the smallest repeating unit of the wave.  If you were to take a portion of the wave on a diagram, and copy and paste it infinitely on each end without it changing the shape, then that is the full oscillation.
+
+The \textbf{period} will be the time taken for one whole oscillation to pass a point.
+
+The \textbf{frequency} describes how many full oscillations pass a point in one second (or minute, or hour depending on your units).  Therefore it is the reciprocal of the period, or
+\begin{equation*}
+\mathbf{f = \frac{1}{t}}.
+\end{equation*}
+
+The \textbf{amplitude} is the height of the wave's oscillations from the origin.
+
+\begin{figure}[H]
+\centering
+\input{images/lambda}
+\end{figure}
+
+We can describe the speed of the wave using $v=\frac{d}{t}$ as well, so this in terms of the wave quantities is
+\begin{equation}
+\mathbf{v = f \times \lambda}.
+\end{equation}
+
+There are \textbf{two speeds you are commonly required to know}.
+
+\begin{description}
+\item[Sound] Typically 340 m/s
+\item[Electromagnetic] $3\times10^8$ m/s.
+\end{description}
+
+There are also two types of waves to consider, transverse and longitudinal.  
+
+Transverse waves oscillate perpendicular to the actual energy movement.  An example of these would be light waves.  As shown here the direction of movement is perpendicular to that of oscillation.
+\begin{figure}[H]
+\centering
+\input{images/transverse}
+\end{figure}
+
+Longitudinal however, will oscillate in the same direction of motion, which are a little difficult to visualise.  These include sound waves and seismic waves, but typically when actually drawing these they can be treated with the same equations and thus will be drawn similarly.
+
+
+
+\subsection{Behaviour}
+Waves have different behaviours when passing through different mediums.
+
+Reflection occurs when the wave meets a boundary, and will reflect at an angle equal to that it met the boundary at, the angle of incidence.  The normal in this example is an imaginary line that cuts perpendicularly through the boundary.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{incidence-reflection}
+\end{figure}
+
+Refraction occurs when a wave meets a medium with a different density to the one it was passing through.  If the density of the medium is higher then the light wave will speed up and pass through at a closer angle to the normal, e.g. $\theta_R < \theta_i$.  If it's a lower density then the angle will be greater than the incident angle.
+
+At a planar boundary, a flat surface, where only reflection will happen, \textbf{the angle of incidence is equal to the angle of reflection.}
+
+\subsubsection*{Total Internal Reflection}
+This has come up before so its important to cover it.  If going from a \textbf{more dense material to a less dense one}, the wave will speed up, but if the angle of incidence is \textbf{greater than a certain critical angle} then the wave can reflect back into the original material instead of refracting.
+
+Both criteria have to be fulfilled for total internal reflection to occur. 
+
+\subsubsection*{Example}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{2013q11}
+\end{figure}
+
+For the first diagram, we've been told that the incident angle is $40^\circ$ which is lower than the critical angle indicating that the ray will follow path P.  Therefore no internal reflection.
+
+For the second diagram, the ray is travelling from air to glass, less dense to more dense, so internal reflection cannot occur anyway and the ray will follow path S.
+
+\subsubsection*{The Doppler Effect}
+One other effect that must be mentioned is the doppler effect.  If you've ever heard a police car or ambulance passing you, you've experienced the doppler effect.  
+
+As it approaches, it sounds much higher than it does after it's passed and is moving away.  This is because as it's approaching, each wave peak will be much closer to the previous one, effectively it's frequency has been increased because the object is moving. 
+
+Conversely, the reverse is also true as it recedes, as the next peak will be farther away than the previous one, reducing it's frequency.  
+
+
+\subsection{Sound Waves}
+A quick overview of sound waves also has to be covered so that you're aware of their unique properties.  Firstly, they are longitudinal waves, which as discussed means they oscillate in the same direction of propagation.
+
+They will behave in the same manner as other types of waves, but one interesting phenomena is that of echoes, which is the sound wave reflecting off the environment.
+
+Sound waves have a number of applications in frequencies above that which we can audibly hear, known as ultrasound.  The high frequency waves are reflected off objects and the time for them to return allows us to calculate where certain objects may be.  This is how sonar, medical ultrasound (seeing inside the womb for example) and deep sea scanning work.
+
+
+\subsection{Modelling Real Physical Systems}
+Hopefully, by now you should have a decent grasp of how waves work and the necessary equations, but in a large number of questions you'll have to apply them to an actual physical system.  In some cases this is obvious as we're dealing with actual waves, but in others its not quite as easy.  Lets look at a quick example. 
+
+\subsection*{Example 1}
+
+\includegraphics[width=\textwidth]{2011q27}
+
+This is from the 2011 paper and don't worry if how to approach this isn't too obvious.  
+
+Firstly, look for information in the question that applies to the equations that you already know.  The man at the front beats the drum 50 times a minute.  They've given us a result for the frequency with which he hits the drum and we're also given the speed of sound.  So how does this relate to the length of the column?
+
+Going back to the question, we know that the soldier at the front puts his right foot down as the one at the back puts down his left foot and vice versa.  This motion is very similar to a wave, the right foot movement representing a peak and the left foot a trough.  Modelling it in this way, the total length of soldiers is effectively half of a total wavelength.  
+
+Then tackling the question is simply a matter of $v=f \lambda$ and dividing the result for $\lambda$ by 2 to get the column length.  
+
+\subsection*{Example 2}
+
+\includegraphics[width=\textwidth]{2012q27}
+
+This is the same kind of situation, find ways to apply the equations you know to what you've been given.  We know the distance the speaker oscillates over, and if we model this motion as a wave we see the distance $\textbf{XY}$, will be twice the amplitude of a wave.  Since it produces pulses of pressure every 0.2 milliseconds we can calculate the frequency also.  From this all the information we need is available.
+
+
+\section{EM Waves}
+We've covered the fundamentals of waves, but one of the most important types are those in the electromagnetic spectrum.  This includes radio, visible light and a host of other types.  These are transverse and propagate through a vacuum at the speed of light.  In air or water they will propagate slower due to absorption and re-emission but this is unlikely to be something they will test.  The full spectrum is included here from lowest energy to highest energy.
+\begin{table}[H]
+\centering
+\begin{tabular}{c|ccccc}
+&Wavelength & Frequency (Hz)\\
+\hline
+Radio Waves & >10cm &$<3\times10^7$\\
+Microwaves&1mm - 10cm & $3\times10^9$ - $3\times10^{11}$\\
+Infrared&30mm - 1mm &$3\times10^{11}$ - $4\times10^{14}$\\
+Visible Light&400nm - 700nm & $4\times10^{14}$ - $7\times10^{14}$\\
+Ultra-Violet&10nm - 400 nm & $7\times10^{14}$ - $3\times10^{16}$\\
+X-Rays&0.01nm - 10nm & $3\times10^{16}$ - $3\times10^{19}$\\
+Gamma&<0.01nm & $>3\times10^{19}$\\
+\end{tabular}
+\caption*{Source: https://www.pa.msu.edu/courses/2000fall/PHY232/lectures/emwaves/spectrum.html}
+\end{table}
+
+These definitions are quite fluid and there will be different sources giving different values, but they key here is that they will be of the same order of magnitude.  The important thing here is not to memorise exactly the different frequencies but you should be able to ballpark each of the wavelengths and be able to order them correctly in decreasing wavelength/frequency/energy.
+
+\subsection{Uses}
+Each of these parts of the spectrum has their own uses and dangers.  It's very important that you are able to correctly identify these.
+
+\subsubsection*{Radio}
+Radio waves are most commonly used in radio communication or broadcasting.  There are very few to no dangers associated with these waves due to their lower energy.
+
+\subsubsection*{Microwaves}
+These are used in cooking as they can be absorbed by water molecules, or also in communication with satellites or mobile calls.  A poor microwave oven may disrupt these signals for this reason.  
+
+The main danger associated with microwaves is damage to cells as water molecules heat up when absorbing them.  This requires a very high dose to cause damage however.
+
+\subsubsection*{Infrared}
+This is what we commonly associate with heat as it is absorbed and emitted by the skin.  Mostly this is used in heating appliances like toasters or heaters.
+
+\subsubsection*{Visible Light}
+This is the light you see.  There are very few dangers associated with this form of light.
+
+\subsubsection*{Ultraviolet}
+A large amount of this form of light is emitted by the sun and is commonly used in tanning beds as this causes our skin to become darker.  However, it has the potential to cause skin damage and can cause cells to become cancerous.
+
+\subsubsection*{X-Rays}
+Used to visualise parts of the body or used as part of security scanners.  This form of EM waves is dangerous as it has a high penetrative power and can ionise cells causing them to become cancerous.  The number of X-rays you have is consequently monitored to reduce the risk of you receiving a damaging dose.
+
+\subsubsection*{Gamma Rays}
+These are used most commonly to sterilise surgical equipment or kill bacteria in food.  They are highly energetic and very dangerous having the potential to be fatal in high enough doses, or cause cancer in lower doses.
+
+\section{Radioactivity}
+This section deals with the structure of atoms.  You should already have an understanding of how molecules and atoms move in different physical states (gas, liquid or solid) but now we're going to look at what makes up these atoms.
+
+Firstly, all atoms are made up of three components,
+\begin{description}
+\item[Electrons] Negative charge, mass of $9.1\times10^{-31}$kg.
+\item[Protons] Positive charge, mass of $1.7\times10^{-27}$kg.
+\item[Neutrons] Neutral charge, mass of  $1.7\times10^{-27}$kg.
+\end{description}
+
+Atoms are formed of a nucleus comprised of neutrons and protons bonded together.  Orbiting this nucleus are electron as illustrated.  
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{atom}
+\end{figure}
+
+
+In a neutral atom, the number of protons will be equal to the number of electrons as they have exactly equal but opposite charges.  Remove an electron, or remove a proton and the atom becomes \textbf{ionised}: it now carries a charge.
+
+We denote most chemical symbols via this notation
+{\Large\ce{^{M}_{P}X}}.
+
+In place of \textbf{M}, the mass number, we note the number of protons added to the number of neutrons.  \textbf{P} is the proton number and we note the number of protons there.  In place of X we put chemical symbol, for example $H$ if we were dealing with hydrogen.
+
+An example of this could be Carbon.  We denote it as 
+{\Large{\ce{^{12}_{6}C}}},
+but if we were to remove an electron, ionising it, we form
+{{\Large{\ce{^{12}_{5}C^+}}}}.
+
+The different types of atoms, Carbon, Hydrogen, etc. are dependent upon the number of protons in the nucleus.  This will have the largest effect on the chemical expression of the atom.  We can also form different stable \textbf{isotopes} which are atoms with the same number of electrons and protons but different mass numbers, these will not behave very differently.
+
+
+\subsection{Decay}
+Atoms are not completely stable and can undergo different forms of decay transforming into various other atoms or ions.  The three types of radiation are alpha, beta and gamma. 
+
+ 
+
+\subsubsection*{Alpha}
+Alpha radiation is formed from a Helium nucleus breaking free from the atom, {{\Large{\ce{^{4}_{2}He}}}}.  In this type of decay we reduce the mass number of the original atom by 4, and it's proton number by 2.
+
+Alpha radiation cannot penetrate paper and cannot move more than around 5cm through air.  They are highly ionising however, and if a source is ingested it can do a tremendous amount of damage
+
+\subsubsection*{Beta}
+Beta decay is the expulsion of an electron from the nucleus of the atom.  Its important to note that the atom doesn't lose any orbiting electrons.
+
+A neutron can decay into a proton, and since we need to conserve charge, this decay results in an electron being expelled.  There are no changes to the mass number in this case, but the proton number does increase by 1.
+
+Beta radiation can penetrate anything up to a thick sheet of aluminium and can move around 15cm through air.  They are fairly ionising but are not likely to come in contact with an atom due to the small size of the electron.
+
+\subsubsection*{Gamma}
+If the nucleus is unstable, it may emit gamma rays which will stabilise the nucleus slightly.  This has no effect upon the mass, charge or proton numbers.
+Gamma rays are highly penetrative, highly ionising and very long range.
+
+
+There are low levels of radiation all around us in what is known as background radiation.  This can come from rocks and all manner of minerals, cosmic rays or even plants.  Also artificial sources such as radioactive waste and medical x-rays will add to the background radiation.  Luckily the background is low enough to not cause us a big risk yet.
+
+
+
+\subsection{Half-Life}
+We define the activity of a sample as how many decays it undergoes in a certain amount of time.  Of course over time this will decrease as the sample stabilises, but this will happen exponentially, there will be no set time when radioactivity will end.  Consequently, we use the term half-life to describe the rate at which a sample's decay rate ceases.  
+
+The half-life is the time taken for the sample's activity to halve.  Say we have a half-life of 1 minute and an initial activity of 100.  In 1 minute it will be 50, after another 1 it will be 25 and so on.  We can visualise this thusly.
+  
+\begin{figure}[H]
+\centering
+\input{images/exp}
+\end{figure}
+
+Over time, if the decay is of the form of alpha radiation, this will result in the mass of the sample decreasing at this rate.  The best way to handle this kind of question is to work out how much decayed and non-decayed mass there is.
+
+\subsection{Fission and Fusion}
+Nuclear fission involves the splitting of uranium or plutonium isotopes to release energy.  The most commonly used isotope is uranium-235.
+
+When the Uranium nuclei absorbs a neutron, this causes it to split into two smaller nuclei releasing other neutrons in the process.  This splitting releases energy and these neutrons go on to hit more nuclei, causing what is known as a chain reaction.  We summarise this via the following equation
+\ce{^{235}_{92}{U} + ^1_0{n} -> ^{142}_{56}{Ba} + ^{91}_{36}Kr + 3 ^1_0{n}}.  As you can see the longer this reaction goes on, the more nuclei react.
+
+
+Fusion on the other hand generates energy in a different fashion.  Instead of splitting the nuclei, nuclear fusion bonds them, which results in a release of energy, which is how the sun generates energy.  Hydrogen nuclei are used for this as the process requires smaller elements to release energy from the bonding process.  An example might be \ce{^1_1H + ^2_1H + 1_0n -> 4_2He}.  
+
+Unfortunately, the repulsive force of the protons within hydrogen prevent bonding without a large amount of energy to force them together, requiring extremely high temperatures for fusion to work.  One of the issues with current fusion implementations are that reaching these temperatures requires more energy than we get from fusion.
+
+
+
+
+
+
+\end{document}
+\end
+

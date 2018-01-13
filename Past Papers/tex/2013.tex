@@ -1,0 +1,433 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{amsmath}
+\usepackage[version=4]{mhchem}
+\usepackage{float}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+ \usepackage[usenames,dvipsnames]{pstricks}
+\usepackage{epsfig}
+ \usepackage{pst-grad} % For gradients
+ \usepackage{pst-plot} % For axes
+ \usepackage[space]{grffile} % For spaces in paths
+ \usepackage{etoolbox} % For spaces in paths
+\makeatletter % For spaces in paths
+ \patchcmd\Gread@eps{\@inputcheck#1 }{\@inputcheck"#1"\relax}{}{}
+\makeatother
+\usepackage{pst-node,pst-circ}
+
+\setlength{\parskip}{\baselineskip}%
+\setlength{\parindent}{0pt}%
+
+\title{BMAT 2013 Solutions}
+\author{The Author}
+\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\section{2013}
+\subsection*{Q1}
+\subsection*{Q2}
+\subsection*{Q3}
+
+Lets deal with each statement in turn.
+
+\begin{enumerate}
+\item This statement is True.  Microwave radiation can cause damage because it is absorbed by water molecules, which causes them to excite and heat up.  This is in fact how a microwave works, not by heating the food, but by heating the water contained inside.
+\item X-rays are high energy and when they interact with matter they can cause an electron, contained in an atom, to become excited and transfer enough energy for it to become free, ionising the atom.  Therefore this is False.
+\item This is False.  Infra-red radiation can cause skin damage but it is not high energy to cause damage in the human body and has a very low penetration depth.  Remember, we emit infra-red radiation constantly.
+\end{enumerate}
+
+We know that only statement 1 and 2 are True therefore the solution is Option \textbf{D}.
+
+\subsection*{Q4}
+This is a simple substitution of the two values given, as well as some simple algebra.  Substituting in first gives
+\begin{equation*}
+\frac{4.6 \times 10^7 + 7 \times 2 \times 10^6}{4.6 \times 10^7 - 2 \times 2 \times 10^6 }.
+\end{equation*}
+We can then simplify this down to
+\begin{equation*}
+\frac{4.6 \times 10^7 + 1.4 \times 10^7}{4.6 \times 10^7 - 0.4 \times 10^7 }.
+\end{equation*}
+As you can see, we have tried to make the powers in all parts of the expression equal to each other, allowing us to reduce the problem to a simple matter of addition.  Adding these two powers together on both the numerator and denominator,
+\begin{equation*}
+\frac{6 \times 10^7}{4.2 \times 10^7 }.
+\end{equation*}
+In this case, since we have the same power of ten on both the numerator and denominator, these can be taken separately to cancel each other.  This leaves 
+\begin{equation*}
+\frac{6}{4.2}.
+\end{equation*}
+However, as you will notice, this is not an option given in the paper, so we have to do a further simplification.  It would be nice not to have a decimal on the denominator so we multiply this fraction by 5 as there are 5 parts of 0.2 in 1.  Doing this simple multiplication to both the numerator and denominator results in,
+\begin{equation*}
+\frac{30}{21}.
+\end{equation*}
+This now becomes an issue of finding the highest common factor of these two results.  The result should be obvious as 3, resulting in
+\begin{equation*}
+\frac{3}{3} \times \frac{10}{7} = \frac{10}{7}.
+\end{equation*}
+This corresponds to Option \textbf{A}.
+
+\subsection*{Q6}
+The first hint given here is that $\rm{\Delta H}$ is negative, meaning the reaction is exothermic meaning the reaction produces heat.  Therefore, we want to keep the temperature low.
+
+Since the reaction is in equilibrium with more moles in the reactants we want to increase the pressure to force more T to be produced and to add R and S.  
+
+The presence of a catalyst wouldn't have an effect on the production of the reaction as it speeds up both reactions routes at an equal rate.  
+
+Our answer is consequently Option \textbf{B}.
+
+\subsection*{Q7}
+The first step is identifying the appropriate meter.  Voltmeters are connected in parallel across a circuit as they measure the potential difference between two points and have a very high resistance, so Q and R are voltmeters.  Ammeter's are connected in series and have a very low resistance to measure current, so P is an ammeter.
+
+By closing the switch, we introduce a path of very low resistance for the current to flow through.  In parallel circuits, the situation across R, we add resistances as
+\begin{equation*}
+\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + \dots,
+\end{equation*}
+where $R$ in this case refers to the resistance.  For a wire and a resistor in parallel, where a wire's resistance will be very much lower than that of the resistor, the resistance of this parallel circuit becomes incredibly small.  We then use $V=IR$, where $V$ is voltage, $R$ is resistance and $I$ is current.  Since the resistance has dropped, the voltage registered by voltmeter R will drop accordingly.
+
+For Q, since this resistor will now have a higher voltage passing through it, it will measure a higher voltage.
+
+For P, again use $V=IR$ and the knowledge that the overall resistance of the circuit has dropped, as they are added in series.  This means we will measure a larger value for the current.
+
+This means our answer is Option \textbf{H}.
+
+\subsection*{Q8}
+This question tests your ability to manipulate fractions, algebraic expressions and factorise quadratics.  The expression we have to simplify is 
+\begin{equation*}
+4-\frac{x^2(1-16x^2)}{(4x-1)2x^3}.
+\end{equation*}
+Immediately a simplification option presents itself as we are multiplying on the numerator by $x^2$ and on the denominator by $2x^3$.  These are divisible by each other, so doing this first leaves only $2x$ on the denominator and the $x^2$ disappears, leaving
+\begin{equation*}
+4-\frac{1-16x^2}{(4x-1)2x}.
+\end{equation*}
+Now multiply out the denominator to give 
+\begin{equation*}
+4-\frac{1-16x^2}{(4x-1)2x},
+\end{equation*}
+which unfortunately does not simplify nicely.  So lets bring the 4 into the fraction.  This is accomplished by multiplying it by our fractions denominator, giving
+\begin{equation*}
+\frac{4 \times ((4x-1)2x) - (1-16x^2)}{(4x-1)2x}.
+\end{equation*}
+Multiplying all this out gives us the greatly reduced
+\begin{equation*}
+\frac{32x^2 - 8x - 1 + 16x^2}{(4x-1)2x} = \frac{48x^2 - 8x - 1 }{(4x-1)2x},
+\end{equation*}
+but we can simplify this further as the numerator is a quadratic, which we can factorise.
+\begin{equation*}
+\frac{(4x-1)(12x+1)}{(4x-1)2x} = \frac{12x+1}{2x}
+\end{equation*} 
+All the results are of the form of a number plus a fraction, and since one part of the numerator is multiplied by x, we split up the numerator into
+\begin{equation*}
+\frac{12x}{2x} + \frac{1}{2x} = 6 + \frac{1}{2x}.
+\end{equation*}
+This has been simplified to the appropriate form and gives us result \textbf{F}.
+
+\subsection*{Q10}
+You need to remember what this reaction produces, \ce{Na + H2O -> NaOH + H2}.
+
+Lets balance the equation to \ce{2Na + 2H2O -> 2NaOH + H2}.
+
+So for 2 moles of sodium we'll produce 
+
+\subsection*{Q11}
+We know the critical angle of the glass-air boundary is 42$^\circ$, and total internal reflection only ocurrs when the angle of incidence is greater than the critical angle and the light is travelling from a high density material to one that is of lower density.  
+
+For Figure 1, the angle of incidence is 40$^\circ$ so total internal reflection cannot occur, therefore it follows path P, the refraction path.
+
+For Figure 2, one might assume that the angle of incidence is greater than the critical angle, but in this case we're dealing with light travelling from air to glass, so total internal reflection cannot occur as air is less dense than glass.  The light therefore follows path S.
+
+The answer is therefore Option \textbf{C}.
+
+\subsection*{Q12}
+To solve a problem of this form, firstly we need to see know where the coordinates of the square lie following the transformation.  It is definitely helpful when doing this type of problem to form a mental picture of what's happening at each stage or sketch them out quickly on the question paper if that helps you visualise the transformations.
+
+Here we have the initial state of the square before any transformations are applied.
+
+
+\begin{figure}[H]
+\centering
+\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+{
+\begin{pspicture}(-2,-2)(2, 2)
+\rput[bl](1.2,1.2){A}
+\rput[bl](-1.45,1.2){B}
+\rput[bl](-1.5,-1.4){C}
+\rput[bl](1.2,-1.4){D}
+\rput(0,0){\psaxes[linecolor=black, linewidth=0.04, tickstyle=full, axesstyle=axes, labels=none, ticks=all, dx=1cm, dy=1cm](0,0)(-2,-2)(2,2)}
+\psline[linecolor=black, linewidth=0.04](-1,1)(-1,-1)(1,-1)(1,1)(-1,1)
+\end{pspicture}
+}
+\end{figure}
+
+This square is then rotated 90$^{\circ}$ about the origin, which is fairly straightforward.  Just move each coordinate round the origin to the next point.
+
+
+\begin{figure}[H]
+\centering
+\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+{
+\begin{pspicture}(-2,-2)(2, 2)
+\rput[bl](1.2,1.2){B}
+\rput[bl](-1.45,1.2){C}
+\rput[bl](-1.5,-1.4){D}
+\rput[bl](1.2,-1.4){A}
+\rput(0,0){\psaxes[linecolor=black, linewidth=0.04, tickstyle=full, axesstyle=axes, labels=none, ticks=all, dx=1cm, dy=1cm](0,0)(-2,-2)(2,2)}
+\psline[linecolor=black, linewidth=0.04](-1,1)(-1,-1)(1,-1)(1,1)(-1,1)
+\end{pspicture}
+}
+\end{figure}
+
+The square is then reflected about the function $y=x$, so to do this just plot the function on the graph to see what points need to be reflected.
+
+\begin{figure}[H]
+\centering
+\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+{
+\begin{pspicture}(-2,-2)(2, 2)
+\rput[bl](1.2,1.2){B}
+\rput[bl](-1.45,1.2){C}
+\rput[bl](-1.5,-1.4){D}
+\rput[bl](1.2,-1.4){A}
+\rput(0,0){\psaxes[linecolor=black, linewidth=0.04, tickstyle=full, axesstyle=axes, labels=none, ticks=all, dx=1cm, dy=1cm](0,0)(-2,-2)(2,2)}
+\psline[linecolor=black, linewidth=0.04](-1,1)(-1,-1)(1,-1)(1,1)(-1,1)
+\psline[linecolor=red, linewidth=0.04, linestyle=dashed](-2,-2)(2, 2)
+\end{pspicture}
+}
+\end{figure}
+
+Only the points A and C need to be reflected since B and D lie on the $y=x$ line and therefore reflection does nothing to change their location.  This leaves us with the figure we need to apply the final transformation to.
+
+\begin{figure}[H]
+\centering
+\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+{
+\begin{pspicture}(-2,-2)(2, 2)
+\rput[bl](1.2,1.2){B}
+\rput[bl](-1.45,1.2){A}
+\rput[bl](-1.5,-1.4){D}
+\rput[bl](1.2,-1.4){C}
+\rput(0,0){\psaxes[linecolor=black, linewidth=0.04, tickstyle=full, axesstyle=axes, labels=none, ticks=all, dx=1cm, dy=1cm](0,0)(-2,-2)(2,2)}
+\psline[linecolor=black, linewidth=0.04](-1,1)(-1,-1)(1,-1)(1,1)(-1,1)
+%\psline[linecolor=red, linewidth=0.04, linestyle=dashed](-2,-2)(2, 2)
+\end{pspicture}
+}
+\end{figure}
+
+We can compare this to the original to see how to return to the coordinates to their original points.  Notice that the points have effectively had their x-coordinates swapped, which is equivalent to a reflection in the y-axis.  If you're not sure why this is, just remember that you're swapping the coordinates across the line you set, so draw an imaginary line along the y-axis and swap every point across that line. We therefore end up with Option \textbf{B}.
+
+
+
+\subsection*{Q15}
+This question tests your knowledge of half-lives of radioactive materials, where the half-life is the \textbf{time taken for the count rate of a material to reduce to half of its original value}.  The tricky part is the fact that we're dealing with two different materials added together so the count rate of each can be added together to give the total count rate, but remember that they will decay at different rates.  So, for now lets deal with each separately and add their count rates at the end.
+
+Source X has a half-life of 4.8 hours and we are measuring the samples after 24 hours.  Dividing 24 by 4.8 gives us a value of 5, which means it has halved 5 times since we initially made the measurement.  So to get the final count rate we divide the initial count by a factor of $2^5$, or 32.  Therefore, $320 \div 32$ leaves us with a final count rate of \textbf{10} for source X.
+
+Source Y has a half-life of 8 hours which means it has halved 3 times in that time.  The result of $2^3$ gives us 8, and calculating $480 \div 8$ results in a count rate of \textbf{60} for source Y.
+
+Now we add these count rates together to give us a total count rate of \textbf{70}, which is Option \textbf{D}.
+\looseness=-1
+
+\subsection*{Q16}
+These are simply simultaneous equations in disguise, which can be written as
+\begin{equation*}
+x \propto z^2,
+\end{equation*}
+\begin{equation*}
+y \propto \frac{1}{z^3}.
+\end{equation*}
+
+We're looking for a relationship between x and y so we need to substitute the result for $x$ into that of $y$.  Since $y$ contains a term $z^3$ we need to convert our result for $x$ to contain that.  First, to make it easier to see we apply a power of $\frac{1}{2}$ to both sides to give  us
+\begin{equation*}
+x^{\frac{1}{2}} \propto z.
+\end{equation*}
+
+Then apply a power of 3 to both sides, to give a result in terms of $z^3$, yielding
+\begin{equation*}
+x^{\frac{3}{2}} \propto z^3.
+\end{equation*}
+
+Remember when applying a power, the original power is just multiplied by that value.  Now, applying the substitution we have a relationship between $x$ and $y$.
+\begin{equation*}
+y \propto \frac{1}{x^{\frac{3}{2}}}.
+\end{equation*}
+
+However, none of the solutions are of this form and we want a relationship in terms of $x$, so we simply flip the fractions (this is equivalent to applying a power of -1 to both sides, or multiplying both sides by $x^{\frac{3}{2}}$ and dividing by $y$),
+
+\begin{equation*}
+x^{\frac{3}{2}} \propto \frac{1}{y}.
+\end{equation*}
+
+Now apply a power of 2 to both sides and we end up with 
+
+\begin{equation*}
+x^3 \propto \frac{1}{y^2},
+\end{equation*}
+
+which is \textbf{the cube of x is inversely proportional to the square of y}, and Option \textbf{D}.
+
+\subsection*{Q19}
+
+This question tests your knowledge of circuits, specifically power dissipation and adding resistors together in series.
+
+\begin{figure}[H]
+\centering
+\begin{pspicture}(-3,-2)(3, 2)
+\pnode(-3,-1){A} % r1
+\pnode(0,-1){B}
+\pnode(3,-1){C} %r2
+\pnode(-3, 1){D} %battery
+\pnode(3, 1){E}
+\resistor[labeloffset=.8cm](A)(B){$R_1$}
+\resistor[labeloffset=.8cm](B)(C){$R_2$}
+\wire(C)(E)
+\wire(A)(D)
+\battery[labeloffset=.8cm](D)(E){$V$}
+\end{pspicture}
+\end{figure}
+
+When adding resistors in series, the total resistance of the circuit is simply the addition of each resistor together so $R=R_1+R_2$.  We also need to make use of the power rule which can be expressed as,
+\begin{equation*}
+P = IV,
+\end{equation*}
+and knowing that $V=IR$, where $V$ is voltage, $R$ is resistance and $I$ is current, we can express the total power dissipated in this circuit as
+\begin{equation*}
+P=\frac{V^2}{R_1 + R_2}.
+\end{equation*}
+
+Power will be dissipated from each resistor in proportion to its resistance, or in other words the higher the resistance, the more power will be dissipated from that resistor.  We can therefore calculate the fraction of the resistance of $R_1$ in relation to the circuits total resistance as 
+\begin{equation*}
+\frac{R_1}{R_1+R_2}.
+\end{equation*}
+Since resistance is proportional to power dissipated, this also represents the fraction of power dissipated by $R_1$ in relation to the total power.  So, to get an expression of the power dissipated from $R_1$ we simply multiply our expression for $P$ by this fraction giving us
+\begin{equation*}
+P = \frac{V^2R_1}{(R_1 + R_2)^2},
+\end{equation*}
+which is option \textbf{D}.
+
+\subsection*{Q20}
+For this question, we need Pythagoras' theorem,
+\begin{equation*}
+a^2 + b^2 = c^2,
+\end{equation*}
+for a right-angled triangle.
+
+We can use this to calculate the lengths of the two blocks beneath the first as we are told that the corners touch the midpoint of a face of the cube below.  Taking a face of the upper block and splitting it in half, we get a right angled triangle of lengths 1 cm and 1 cm.  The length of its hypotenuse will be the length of the cube below it, so using Pythagoras' theorem, we end up with a result of $\sqrt{2}$.  
+
+Now we do the same process to calculate the lowest block, so $(\sqrt2)^2 + (\sqrt{2})^2 = 4$.  Therefore the length of the lowest block face is 2 cm.
+
+Now calculate the surface area of each individual cube.  For the highest it is $1^2 \times 6 = 6$, for the middle it is $\sqrt(2)^2 \times 6 = 12$ and for the lowest it is $2^2 \times 6 = 24$.  Adding these all together gives us an area of 42 $\mathrm{cm^2}$.  
+
+However, since the faces are joined together, we need to remove them from this value of this surface area.  From 42 we subtract the area of the upper cube's face and the area of the middle cube's face.  So $42 - 1 - 2 = 39 \mathrm{cm^2}$.  The solution is therefore Option \textbf{E}. 
+
+
+
+
+\subsection*{Q23}
+This question can be solved by process of elimination.  We are looking for a proportional relationship in all these cases.
+\begin{description}
+\item[A] Using Newton's second law, $F=ma$, the force is indeed proportional to the body's acceleration so this is True.
+\item[B] This requires $V=IR$, where $V$ is voltage, $I$ is current and $R$ is resistance.  Voltage is proportional to current for a fixed resistance so this is True.
+\item[C] The equation for kinetic energy is $E_k = \frac{1}{2}mv^2$, for a mass $m$ and speed $v$.  Kinetic energy is proportional to the square of the speed, therefore this is True.
+\item[D] The equation for speed of a wave in relation to wavelength, $\lambda$, is $v=f\lambda$, but rearranging to express the wavelength in terms of the frequency yields $\lambda = v / f$.  This is an inversely proportional relationship for a fixed speed, therefore this cannot be represented by a proportional graph, making this False.
+\item[E] Work done, $E$, by a force, $F$, over a distance $d$, can be expressed as $E=Fd$.  Work done is proportional to force for a fixed distance, therefore this is True.
+\end{description}
+
+The only result that is not proportional is \textbf{D}, therefore this cannot describe the graph shown.
+
+\subsection*{Q24}
+There are only two sets of balls that will have two of the same colour in them, which are BBR and RRB.  The probability of picking out the first set BBR can be expressed as
+\begin{equation*}
+\frac{8}{10} \times \frac{7}{9} \times \frac{2}{8} = \frac{8 \times 7 \times 2}{10 \times 9 \times 8} = \frac{7 \times 2}{9 \times 10} = \frac{14}{90}.
+\end{equation*} 
+
+Each individual ball removal reduces the number of balls each time, so make sure to reduce the value of the denominator.  We need to multiply this result by 3, as there are three ways we can pick out this set, i.e BBR, BRB and RBB.
+
+This leaves our probability of picking out this set as
+\begin{equation*}
+\frac{42}{90}.
+\end{equation*}
+
+For RRB we do the same process, including the factor of 3 this time,
+\begin{equation*}
+3 \times \frac{2}{10} \times \frac{1}{9} \times \frac{8}{8} = \frac{2 \times 3}{9 \times 10} = \frac{6}{90}.
+\end{equation*}
+
+Now, we add these probabilities together and simplify,
+\begin{equation*}
+\frac{6+42}{90} = \frac{48}{90} = \frac{8 \times 6}{15 \times 6} = \frac{8}{15}.
+\end{equation*}
+We have our result for the probability, which is option \textbf{C}.
+
+\subsection*{Q26}
+We're using \ce{NO} in this question as a catalyst, which while not consumed in the reaction, is involved.  Therefore, lets approach this question by process of elimination.  In choosing the most likely reaction, find the one that is not only correct, but also involves the least steps.  
+
+\textbf{Option A}
+
+
+\ce{NO + \frac{1}{2}O_2 -> NO_2}\\
+\ce{N_2 + O_2 -> 2NO}
+
+We can immediately eliminate this as the result is not \ce{SO_3}.
+
+\textbf{Option B}
+
+
+ \ce{NO + \frac{1}{2}O_2 -> NO_2}\\
+ \ce{SO_2 + NO_2 -> SO_3 + NO}
+ 
+ This is the correct result as the catalyst is overall conserved in the reaction has the correct reactants and products across both.
+ 
+ \textbf{Option C}
+ 
+ 
+ \ce{SO_2 + NO -> SO_3 + \frac{1}{2}N_2}\\
+ \ce{N_2 + O_2 -> 2NO}
+ 
+While this is correct, it is very unlikely to occur as the number of each reactant involves increases, when compared to Option B. \textcolor{red}{Note: I'm not sure about this}
+
+\textbf{Option D}
+
+\ce{NO + \frac{1}{2}O_2 -> NO_2}\\
+\ce{\frac{1}{2}N_2 + O_2 -> NO_2}\\
+\ce{NO_2 -> NO + \frac{1}{2}O_2}
+
+No \ce{SO_3} is produced, therefore this is incorrect.
+
+\textbf{Option E}
+
+ \ce{SO_2 + NO -> SO_3 + \frac{1}{2}N_2}\\
+\ce{\frac{1}{2}N_2 + O_2 -> NO_2}\\
+\ce{NO_2 -> NO + \frac{1}{2}O_2}
+
+Correct, but a large number of reactions and therefore a very small likelihood of this occurring, compared to Option B.
+
+The solution to this is Option \textbf{B}, as it produces the correct products and requires the least steps to reach an appropriate result and is therefore more likely to occur.
+
+
+\subsection*{Q27}
+For this problem we'll be using the SUVAT equations.  Firstly, we need Newton's second law $F=ma$.  Substituting the values given, of 4 kg and 20 N, we get a result for the acceleration of 5 $\mathrm{ms^{-2}}$.  
+
+We also want to know how fast the body is going at the present moment.  Using the equation for kinetic energy $E_k = \frac{1}{2}mv^2$ and substituting the results for mass and kinetic energy of 1800 J, we get 
+\begin{equation*}
+1800 = \frac{1}{2} \times 4 \times v^2.
+\end{equation*}
+This yields a result for $v^2$ of 900 $\mathrm{ms^{-1}}$, which gives a result for the velocity of 30 by square rooting.  
+
+Now we want to know the distance the body travels.  We'll be using
+\begin{equation*}
+s=ut+\frac{1}{2}at^2,
+\end{equation*}
+where $u$ is the body's initial speed, $s$ is the distance travelled, $t$ is the time taken and $a$ is acceleration during this time.  Substituting all these values in gives a value for the distance of 70 m.  
+
+Now we can simply use the formula for work done which is $E = Fd$ where $d$ is the distance travelled under application of a force $F$.  This is $20 \times 7 = 1400$ and therefore the solution is Option \textbf{E}.
+
+
+
+\end{document}  

@@ -1,0 +1,352 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{amsmath}
+\usepackage[version=4]{mhchem}
+\usepackage{float}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+ \usepackage[usenames,dvipsnames]{pstricks}
+\usepackage{epsfig}
+ \usepackage{pst-grad} % For gradients
+ \usepackage{pst-plot} % For axes
+ \usepackage[space]{grffile} % For spaces in paths
+ \usepackage{etoolbox} % For spaces in paths
+\makeatletter % For spaces in paths
+ \patchcmd\Gread@eps{\@inputcheck#1 }{\@inputcheck"#1"\relax}{}{}
+\makeatother
+\usepackage{pst-node,pst-circ}
+
+\setlength{\parskip}{\baselineskip}%
+\setlength{\parindent}{0pt}%
+
+\title{BMAT 2012 Solutions}
+\author{}
+\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\section*{Q3}
+For the first decay, the loss of 2 to the proton number implies that $\alpha$-decay has occurred, which is the loss of a $\mathrm{^4_2He}$ nuclei, characterised by,
+\begin{equation*}
+\mathrm{^N_RX \rightarrow \; ^{N-4}_{R-2}Y + \; ^4_2He.}
+\end{equation*}  
+Therefore the value of P will be N-4.
+
+For the second decay, the mass remains unchanged but the proton number has changed.  This indicates that the nuclide has undergone $\beta^-$-decay.  The formula for $\beta^-$-decay involves the 'conversion' of a neutron to a proton and the emission of an electron and electron antineutrino.  
+\begin{equation}
+\mathrm{^N_RY \rightarrow \; ^{N}_{R+1}Y + e^- + \bar{v}_e.}
+\end{equation}
+
+This means over both decays the proton number has been reduced by 4, so it is now N-4.  The proton number has been reduced by 2 and then increased by 1, leaving R-1.  The solution is therefore Option \textbf{B}.
+
+\section*{Q4}
+For this we need the equation for the area of a circle,
+\begin{equation*}
+A = \pi R^2.
+\end{equation*}
+
+We are given the diameters of all the circles in the design, but the fact that they're all touching at the top of the shape merely tells us that, they're contained within one another.  Lets deal with the two smallest inner circles first.  Only the second is shaded, while the first contained within is not, so we simply calculate the area of the second and subtract the area of the first to get the shaded region.
+\begin{equation*}
+\pi({\frac{2d}{2}}^2 -\frac{d}{2}^2) = \pi(d^2 - \frac{d^2}{4}) = \pi \frac{3d^2}{4}
+\end{equation*}
+
+Now we just do exactly the same process for the third and fourth largest circles.
+\begin{equation*}
+\pi(\frac{4d}{2}^2 - \frac{3d}{2}^2) = \pi(4d^2 - \frac{9d^2}{4}) = \pi \frac{(16-9)d^2}{4} = \pi \frac{7d^2}{4}
+\end{equation*}
+
+Summing these two results together gives us
+\begin{equation}
+\frac{10}{4}\pi d^2 = \frac{5}{2} \pi d^2,
+\end{equation}
+which is Option \textbf{A}.
+
+\section*{Q7}
+This question tests your knowledge of the penetrative power of various radiation types.  Paper is sufficient to stop $\alpha$-radiation, but not $\beta$ or $\gamma$ and since paper appears to have no impact upon the count rate of the source, we can safely eliminate this as a possibility.
+
+$\beta$ and $\gamma$-radiation can both penetrate paper but $\beta$ cannot penetrate aluminium, while $\gamma$ can.  We notice that introducing aluminium greatly reduces the count rate but doesn't eliminate it, suggesting $\beta$-radiation was emitted and stopped by the aluminium, but $\gamma$-radiation is still passing through.  This means that the source emits both $\beta$ and $\gamma$ radiation, and the solution is Option \textbf{F}.
+
+\section*{Q8}
+For this question just follow the general rules of rearrangement, as follows.
+\begin{equation*}
+\begin{aligned}
+&G = 5+\sqrt{7(9-R)^2 + 9} \\\\
+&G-5 = \sqrt{7(9-R)^2 + 9} \\\\
+&(G-5)^2 - 9 = 7(9-R)^2\\\\
+&\frac{(G-5)^2 -9}{7} = (9-R)^2\\\\
+&\sqrt{\frac{(G-5)^2 -9}{7}} = 9-R\\\\
+&R = 9 - \sqrt{\frac{(G-5)^2 -9}{7}}
+\end{aligned}
+\end{equation*}
+The solution is therefore Option \textbf{E}.
+
+
+\section*{Q11}
+For this question we will deal with each situation in turn.
+
+\subsection*{Situation 1}
+Here, a man is sitting on a chair with the distance, d, being to his centre of mass on which the force, F, acts.  No work is actually being done by this force as while he is indeed acted upon by it, there is an equal and opposite force acting on him due to the chair, leaving no net force.  We can therefore not describe this with $\mathrm{Work= F \times d}$ either.
+
+\subsection*{Situation 2}
+In this situation the wheelbarrow is lifted up by force, F, its final position changing, and the distance d describes the width of this wheelbarrow.  In this case work is done as we are changing the position of the object and acting with a force to change this, but we cannot described it with $\mathrm{F\times d}$ as the distance needs to be in the direction the force acts for this equation to apply.
+
+\subsection*{Situation 3}
+A weight is lifted over a pulley, by a force F, with the change in height due to this force being distance d.  Work is done as we've increased the height of the weight and acted upon it with a force: we've given it energy to increase its height.  It can also be described by $\mathrm{F\times d}$ as the direction of the force corresponds to the distance it moves.
+
+From this we know the solution is Option \textbf{D}.
+
+\section*{Q12}
+This question deals with both a cube and squared root, so lets deal with the squared root first.  It is made up of two powers of 10, which we can merge by performing the subraction.
+\begin{equation*}
+(4\times10^3) - (4\times10^2) = 3.6\times10^3 = 36 \times 10^2
+\end{equation*}
+Now we can very easily perform the squared root upon this, yielding
+\begin{equation*}
+6\times 10 = 60.
+\end{equation*}
+
+Now we do the cubed root.  Simplifying the fraction in this question is a simple matter of performing the square on the denominator.
+\begin{equation*}
+\frac{2 \times 10^5}{(5 \times 10^{-3})^2} = \frac{2 \times 10^5}{25 \times 10^{-6}}
+\end{equation*}
+Then we multiply both the numerator and denominator by a factor of $10^6$.
+\begin{equation*}
+\frac{2 \times 10^5 \times 10^6}{25 \times 10^{-6} \times 10^6} = \frac{2}{25} \times 10^{11}
+\end{equation*}
+This can be further simplified by taking a factor of $10^2$ out of $10^{11}$.
+\begin{equation*}
+\frac{200}{25}\times 10^9 = 8 \times 10^9
+\end{equation*}
+Performing the cubed root upon this yields,
+\begin{equation*}
+2\times 10^3 = 2000.
+\end{equation*}
+
+Now we subtract the squared root from the cubed root, giving us,
+\begin{equation*}
+2000 - 60 = 1940,
+\end{equation*}
+which is Option \textbf{E}.
+
+\section*{Q15}
+In this type of question we're going to need the relationship between the speed of the wavelength and its frequency, which is
+\begin{equation*}
+v = f \lambda,
+\end{equation*}
+where $v$ is the speed, $f$ is the frequency and $\lambda$ is the wavelength.
+
+We know that no matter what material the wave is passing through its frequency will remain constant, so the frequency of this wave in air will be
+\begin{equation*}
+\frac{3\times 10^{10}}{12} = 2.5 \times 10^9 Hz,
+\end{equation*}
+where we have converted the speed of light in air to $\mathrm{3 \times 10^{10}\; cm\:s^{-1}}$, as the wavelength is in cm.
+
+Now we, calculate the wavelength of the microwaves in plastic,
+\begin{equation*}
+\frac{2\times10^{8}}{2.5 \times 10^9} = 0.08\: \mathrm{m} = 8\: \mathrm{cm}, 
+\end{equation*}
+which means the solution is Option \textbf{B}.
+
+\section*{Q16}
+For this question, remember how you form the tangent of an angle in a right angled triangle, it's the opposite side divided by the adjacent side to that angle, ignoring the hypotenuse.  Draw a straight vertical line from B to the opposite side of the triangle as shown, which we will label R.
+
+\begin{figure}[H]
+\centering
+
+\begin{pspicture}(-4,-2)(4, 2)
+\rput[bl](-4,-2){A}
+\rput[bl](0.75, 2){B}
+\rput[bl](4, -2){C}
+\rput[bl](0, -2){M}
+\rput[bl](0.75, -2){R}
+
+\psline[linecolor=black, linewidth=0.04](-3.5, -1.5)(0.75,1.8)(3.5,-1.5)(-3.5,-1.5)
+\psline[linecolor=black, linewidth=0.04, linestyle=dashed](0.75, 1.5)(0.75, -1.5)
+\psline[linecolor=black, linewidth=0.04](0.75, 1.8)(0, -1.5)
+\end{pspicture}
+\end{figure}
+
+So we want to calculate tan(M) from this diagram.  The first step we can do is to calculate the ratio of the lengths of the sides using tan(A) and tan(C).  
+
+From tan(A), which we know is $\frac{1}{6}$, length BR will be 1 if AR is 6.  
+
+Similarly for tan(C), side BR will be 2 if RC is 3.  However, we want the ratio to be the same, so if BR is 1, then RC must be 1.5.  
+
+AR+RC = 7.5 for the length of the triangle side AC.  Now we can work out the length MR as we know M lies in the midpoint of the triangle, so CM will be 3.75.  
+
+We want MR though so calculate using MR-RC=$3.75-1.5=2.25$.  Now we can calculate the tangent of the angle, as it will be the opposite side divided by the adjacent, or $\frac{1}{2.25}$.  
+
+Multiply this result by 4 to get whole numbers and we end up with
+\begin{equation*}
+\frac{4}{9},
+\end{equation*}
+so the answer is Option \textbf{C}.
+
+\section*{Q19}
+In a parallel circuit, current splits across the paths, but when the filament bulb breaks there is now only one path for current to flow through, so effectively this question is testing your knowledge of the difference between parallel and series circuits.  For this you'll need to remember the equation for adding resistors in parallel,
+\begin{equation*}
+\frac{1}{R} = \frac{1}{R_1}+\frac{1}{R_2} + \dots,
+\end{equation*}
+the equation for adding them in series,
+\begin{equation*}
+R = R_1 + R_2 + ... ,
+\end{equation*}
+and the equation relating current and voltage to resistance,
+\begin{equation*}
+V=IR.
+\end{equation*}
+
+Since lamp X has blown, current can no longer flow through lamp X or the wire, so the circuit transforms from a parallel circuit into a series circuit, as shown.
+
+\begin{figure}[H]
+\centering
+\begin{pspicture}(-3,-2)(3, 2)
+
+%battery
+\pnode(-3, 1.5){A}
+\pnode(-0.5, 1.5){B}
+\pnode(0, 1.5){C}
+\pnode(0.5, 1.5){D}
+\pnode(3, 1.5){E}
+\wire(A)(B)
+\battery[labeloffset=.8cm](B)(C){}
+\battery[labeloffset=.8cm](C)(D){}
+\wire(D)(E)
+
+%ammeter1
+\pnode(3, 0){Ammeter1}
+\circledipole[labeloffset = 0](E)(Ammeter1){A}
+
+%ammeter 2
+\pnode(3, -2){Ammeter2}
+\circledipole[labeloffset=0](Ammeter1)(Ammeter2){A}
+
+%Lamps
+\pnode(0, -2){Lamp1}
+\pnode(-3, -2){Lamp2}
+\lamp(Ammeter2)(Lamp1){}
+\lamp(Lamp1)(Lamp2){}
+\wire(Lamp2)(A)
+
+
+
+%\pnode(-3,-1){A} % r1
+%\pnode(0,-1){B}
+%\pnode(3,-1){C} %r2
+
+
+%\resistor[labeloffset=.8cm](A)(B){$R_1$}
+%\resistor[labeloffset=.8cm](B)(C){$R_2$}
+%\wire(C)(E)
+%\wire(A)(D)
+
+\end{pspicture}
+\end{figure}
+
+
+
+Each bulb will have an associated resistance and assuming the other two bulbs have the same resistance, means the total resistance of the circuit transforms.  The difference between the total parallel and series circuit resistances will be, 
+\begin{equation*}
+\frac{1}{\frac{1}{R_X} + \frac{1}{R_X}} + R_X = \frac{3}{2}R_X \rightarrow R_X + R_X = 2R_X 
+\end{equation*}
+when the bulb breaks.  Therefore the resistance of the circuit has increased as $2R_X > \frac{3}{2}R_X$.
+
+Ammeter 1 and ammeter 2 will now read the same value since originally current was split between two paths, but since its now a series circuit there is no splitting of current. 
+
+The reading for ammeter 1 will have decreased, as we're still suppling the same voltage but the resistance has increased.  Using $V=IR$, we see that the current flowing through the circuit must decrease to keep voltage the same value.
+
+Our solution is therefore Option \textbf{D}.
+
+
+\section*{Q20}
+This question complicates the problem by stating 
+\begin{quotation}
+The player chooses one of the bags and removes two balls without replacing them. If the two balls are the same colour then the player wins. The player is equally likely to choose either bag and the balls are arranged to give the smallest possible probability for the player to win.
+\end{quotation}
+We firstly need to arrange the balls into a formation that minimises the probability, after picking one ball, of choosing one of the same colour.  To do this we want no more than two of the same ball in one bag.  This is achieved by setting one bag as BBRR and the other as BBRY.  Now we calculate the probability of winning with each colour.
+
+\textbf{Yellow}  This is obviously 0.  If we pick out a yellow ball there is no chance of winning
+
+\textbf{Blue}  This will be $\frac{1}{2} \times \frac{1}{3} = \frac{1}{6}$, no matter the bag we pick.  
+
+\textbf{Red} Only the first bag gives us a non-zero probability  of winning, which will be 
+\begin{equation*}
+\frac{1}{2} \times \frac{1}{3} = \frac{1}{6}.
+\end{equation*}
+
+The probability of us picking the first or second bag is respectively $\frac{1}{2}$, so the overall probability of winning with the first bag will be 
+\begin{equation*}
+\left(\frac{1}{6} + \frac{1}{6}\right) \times \frac{1}{2} = \frac{2}{12}.
+\end{equation*}  
+The probability of winning from the second bag will therefore be 
+\begin{equation*}
+\frac{1}{2} \times \frac{1}{6} = \frac{1}{12}.
+\end{equation*}  
+Therefore the probability of winning is the summation of these two, which is equal to 
+\begin{equation*}
+\frac{1}{4},
+\end{equation*}
+and the solution is Option \textbf{B}.
+
+\section*{Q23}
+Gravitational potential energy is $E_p = mgh$ so substituting the values for height lost, $g$ and mass which are all given, we get
+\begin{equation*}
+100*10*100 = 100000 J.
+\end{equation*}
+
+The length of the hill he rolls down (the hypotenuse) is 1000 m, so we can work out the resistive force from work done to keep his speed constant.  There is no gain in speed and therefore kinetic energy so all the gravitational potential energy is converted into work done, which is calculated via $E_w = F \times d$.  Therefore,
+\begin{equation*}
+\frac{100000}{1000} = 100 N,
+\end{equation*}
+which is the resistive force applied up the hill.  Therefore our solution is Option \textbf{D}.
+
+\section*{Q24}
+We can calculate this by setting up a series of equations.  We'll describe the cost of the wood as
+\begin{equation*}
+C_W = BD^2,
+\end{equation*}
+where $C_W$ is the cost of the wood, and $D$ is the diameter of the sign.  Similarly, set up an equation for the cost of metal,
+\begin{equation*}
+C_M = AD.
+\end{equation*}
+
+Total cost can be described by
+\begin{equation*}
+C = AD + BD^2,
+\end{equation*}
+which by doubling the diameter comes to
+\begin{equation*}
+3C = 2AD + 4BD^2, 
+\end{equation*}
+and by equating the two
+\begin{equation*}
+3AD + 3BD^2 = 2AD + 4BD^2, 
+\end{equation*}
+resulting in
+\begin{equation*}
+AD = BD^2 \rightarrow C_W = C_M.
+\end{equation*}
+
+So from this we know we're spending the same amount of money on wood as we are on metal.
+
+We've established that the cost of metal will be 3 times as expensive as that of wood so to spend the same amount on both means we must have 3 times as much wood as metal.  Therefore, metal makes up 25\% of the cost of the sign, which is Option \textbf{A}.
+
+\section*{Q27}
+Lets look at each statement in turn.
+\begin{description}
+\item[P] We know this is False immediately as the speed of sound is approximately 340 $\mathrm{ms^{-1}}$, not 25.
+\item[Q] The speaker oscillates between 0 and 5 mm, so the total distance between peaks will be 5 mm, but the amplitude describes half of that value, so this is False.
+\item[R] Lets just calculate the wavelength for this with $v=f\lambda$.  $300/5000$ = 0.06 m and $400/5000$ = 0.08 m (I've only done this to show how to do a quick check without a calculator).  The wavelength therefore lies between 60 mm and 80 mm, not 5.5 mm, so this is False.
+\item[S] Calculating the frequency is simply done by taking the reciprocal of the time taken for the speaker to produce a pulse.  This is $1/0.02$ which is 5000 Hz, which is 5 kHz.  Therefore, this is True.
+\end{description}
+Only S is true, therefore the solution is Option \textbf{G}.
+
+
+\end{document}  

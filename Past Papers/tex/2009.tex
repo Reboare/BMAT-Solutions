@@ -1,0 +1,212 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{amsmath}
+\usepackage[version=4]{mhchem}
+\usepackage{float}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+\usepackage{pgfplots}
+ \usepackage[usenames,dvipsnames]{pstricks}
+\usepackage{epsfig}
+ \usepackage{pst-grad} % For gradients
+ \usepackage{pst-plot} % For axes
+ \usepackage{pst-eucl}
+
+ \usepackage[space]{grffile} % For spaces in paths
+ \usepackage{etoolbox} % For spaces in paths
+\makeatletter % For spaces in paths
+ \patchcmd\Gread@eps{\@inputcheck#1 }{\@inputcheck"#1"\relax}{}{}
+\makeatother
+\usepackage{pst-node,pst-circ}
+
+\setlength{\parskip}{\baselineskip}%
+\setlength{\parindent}{0pt}%
+
+\title{BMAT 2009 Solutions}
+\author{}
+\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\section*{Q3}
+For this, calculate the resultant force acting on the parachutist.  This will be the difference between the force up (drag) and force down (weight), $900 - 600 = 300$ N.  If the resultant force is up, that means the parachutist will be accelerating upwards as from $F=ma$, the force follows the same direction as the acceleration.
+
+To calculate the acceleration, use $F=ma$, knowing the parachutist has a mass of 60 kg,
+\begin{equation*}
+300/60 = 5,
+\end{equation*}
+which means our solution is Option \textbf{C}.
+
+\section*{Q4}
+Firstly, lets calculate the probability of taking out a red ball.  By the standard rules of probability, this can be expressed as 
+\begin{equation*}
+\frac{x}{x+y+z}.
+\end{equation*}
+
+Now we need to calculate the probability of taking out a blue ball.  Since the red ball is replaced, there are the same number of red balls, so the probability is
+\begin{equation*}
+\frac{y}{x+y+z}.
+\end{equation*}
+
+To calculate the final probability, we just multiple these two together,
+\begin{equation*}
+\frac{xy}{(x+y+z)^2},
+\end{equation*}
+which is Option \textbf{C}
+
+
+\section*{Q8}
+By saying the cube has unit length sides, we just take their length to be 1.  A line joining one face to the nearest vertex will be, using pythagoras' theorem, $a^2 + b^2 = c^2$,
+\begin{equation*}
+\frac{1}{2}^2 + \frac{1}{2}^2 = \frac{1}{2},
+\end{equation*}
+so its length is $\frac{1}{\sqrt{2}}$.  So we can model this line as being the hypotenuse of a right angled triangle of length 1 and length $\frac{1}{\sqrt{2}}$.  Again, we use pythagoras' theorem so,
+\begin{equation*}
+\frac{1}{\sqrt{2}}^2 + 1^2 = \frac{3}{2},
+\end{equation*}
+so the length of the line will be $\sqrt{\frac{3}{2}}$, or Option \textbf{B}.
+
+\section*{10}
+The fraction of carbon in carbon dioxide is 
+\begin{equation*}
+\frac{12}{12+2\times 16} = \frac{3}{11}.
+\end{equation*}
+ 
+This means the \ce{CO_2} contains $\frac{3}{11} \times 4.77$ g of carbon, so the percentage of carbon from the original compound is
+\begin{equation*}
+\frac{\frac{3}{11}\times 4.77}{2} = \frac{3}{22}\times4.77.
+\end{equation*}
+
+This is difficult without a calculator, so fiddle with the numbers to make it something easily divisible
+\begin{equation*}
+\frac{6}{44}\times4.77 \approx 0.65.
+\end{equation*}
+
+Even if you can't work this out exactly, it should be obvious from that fraction that the result must be greater than 60\%, so our only available solution is Option \textbf{E}.
+
+\section*{Q11}
+From the graph, it appears detector 2 detects the same level of radiation, suggesting this is background radiation and the source doesn't emit radiation far enough to be picked up by detector 2.  This suggests beta radiation, as it is unable to travel long distances, but unlike alpha can be picked up 30 cm away.
+
+To calculate the half life, we want to find the point at which the radiation halves.  Subtract the background radiation of 20 from the graph.  What was the initial count rate of 220 will now be 200, and its half will be 100, which was originally 120 on the graph.  So the time at which the count rate of 120 was, from the graph, 2.4 hours.
+
+Our result is therefore Option \textbf{A}.
+
+\section*{Q12}
+This is effectively two separate applications of the binary operation.  We know that operations in brackets have to be applied first so we get
+\begin{equation*}
+\frac{2^3}{3}.
+\end{equation*}
+
+We now apply the operation again with 2 on the bracketed result,
+\begin{equation}
+\frac{\frac{2^3}{3}^2}{2} = \frac{\frac{2^6}{9}}{2} = \frac{2^5}{9} = \frac{32}{9},
+\end{equation}
+or Option \textbf{C}.
+
+\section*{Q15}
+We have a speed-time graph.  Remember that the area under a speed-time graph is going to be the total distance. We need to remember however that the x-axis is in minutes, so multiply your answer by 60.  To solve these types of questions just split the graph into multiple triangles.
+
+\begin{equation*}
+\frac{5}{2} + 15 + 20 + 20 + 20 + \frac{10}{2} + 10 + 10 = 102.5
+\end{equation*}
+
+The graph over the period of 5-7 minutes has been considered as a single triangle to ease calculation, but the actual value of this area will be lower so we must be aware of this when choosing our answer.
+
+Multiplying by 60 gives us 6.15 km, but since the solution must be lower than this, the answer is Option \textbf{D}.
+
+\section*{Q16}
+Using the rules of fractions we can simplify this down thusly
+\begin{equation*}
+\begin{aligned}
+&\sqrt{\frac{2\times10^3 + 8 \times 10^2}{\frac{1}{2500} + 3\times10^{-4}}}\\
+&\sqrt{\frac{2.8 \times 10^3}{\frac{1}{2500} + 3\times10^{-4}}}\\
+&\sqrt{\frac{2.8 \times 10^3}{\frac{1}{2500} + \frac{3}{10000}}}\\
+&\sqrt{\frac{2.8 \times 10^3}{\frac{4}{10000} + \frac{3}{10000}}}\\
+&\sqrt{\frac{2.8 \times 10^3}{\frac{7}{10000}}}\\
+&\sqrt{\frac{2.8 \times 10^7}{7}}\\
+&\sqrt{\frac{14 \times 10^7}{7 \times 5}}\\
+&\sqrt{\frac{2 \times 10^7}{5}}\\
+&\sqrt{4 \times 10^6}\\
+&2\times10^3 = 2000
+\end{aligned}
+\end{equation*}
+So our solution is Option \textbf{F}.
+
+\section*{Q19}
+This is a conversion between kinetic and potential energies, or alternatively we could use SUVAT.
+
+\subsection*{Energy}
+Remember, kinetic energy is $E_k = \frac{1}{2}mv^2$ and potential energy is $E_p = mgh$.  It hits the ground at 20 $ms^-1$ so the energy it has is 
+\begin{equation*}
+\frac{1}{2} \times 5 \times 20^2 = 1000 \mathrm{J}.
+\end{equation*}
+
+Rearrange $E_p=mgh$ in terms of height $\frac{E_p}{mg} = h$ and solve,
+\begin{equation*}
+\frac{1000}{10\times 5} = 20 \mathrm{m}
+\end{equation*},
+so our solution is Option \textbf{B}.
+
+\subsection*{SUVAT}
+This is included only to show an alternative solution but do note that the energy calculation is easier if you're not used to the SUVAT equations.
+We've been given the final speed of 20, it will have 0 initial speed when dropped, it will fall at acceleration g and we want to know the distance travelled, so the only variable we ignore is time.
+
+The equation for this is
+\begin{equation*}
+v^2 = u^2 + 2as.
+\end{equation*}
+
+Rearrange to make the distance the subject $\frac{v^2-u^2}{2a}$ and plug in the values
+\begin{equation*}
+\frac{20^2 -0^2}{2\times 10} = 20 \mathrm{m},
+\end{equation*}
+which is Option \textbf{B}.
+
+\section*{Q20}
+The equation for the volume of a cylinder is
+\begin{equation*}
+\pi r^2h, 
+\end{equation*}
+where h will be twice the radius of the sphere to allow it to touch both sides.  Construct a fraction of the equation of the sphere and that of the cylinder
+\begin{equation*}
+\frac{\frac{4}{3}\pi r^3}{\pi \times 2r \times r^2} = \frac{\frac{4}{3} r^3}{2r^3} = \frac{4}{3\times2} = \frac{2}{3}, 
+\end{equation*}
+which is Option \textbf{D}.
+
+\section*{Q23}
+The total mass of the train including the engines and the carriages is 30000 kg.  Carriage 2 weighs $\frac{1}{6}$ of this mass.  The tension in the coupling will be equal to this fraction of the total driving force so
+\begin{equation*}
+\frac{1}{6}\times 15000 = 2500,
+\end{equation*}  
+so the solution is Option \textbf{A}.
+
+\section*{Q24}
+Lets follow the steps for rearrangement
+\begin{equation*}
+\begin{aligned}
+y &= 5\left(\frac{x}{2}-3\right)^2 - 10\\
+y+10 &= 5\left(\frac{x}{2}-3\right)^2\\
+\frac{y+10}{5} &= \left(\frac{x}{2}-3\right)^2\\
+\pm\sqrt{\frac{y+10}{5}} &= \frac{x}{2}-3\\
+\pm\sqrt{\frac{y+10}{5}}+3 &= \frac{x}{2}\\
+\pm2\sqrt{\frac{y+10}{5}}+6 &= x\\
+\end{aligned}
+\end{equation*}
+which corresponds to Option \textbf{A}.
+
+\section*{Q27}
+This is asking you to compare the same wave on two different x-axis.  The displacement just means the displacement of the wave from the origin, but all we want to compare are the x-axis.  In 60 m there are two full oscillations of the wave, and in 0.6 s there are three oscillations of the wave.  So this indicates that over 90 m there are three full oscillations.  Using $v=d/t$,
+\begin{equation*}
+\frac{90}{0.6} = 150,
+\end{equation*}
+so our solution is Option \textbf{E}.
+
+\end{document}  
